@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "curate-vision"
+version = "0.1.0"
+description = "End-to-end vision dataset curation & pipeline toolkit: intake, clean, dedup, export."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "kiraadityaa" }]
+keywords = ["computer-vision", "dataset", "curation", "dedup", "pipeline"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "imagehash>=4.3.1",
+    "numpy>=1.24",
+    "opencv-python-headless>=4.8",
+    "Pillow>=9.5",
+    "pydantic>=2.0",
+    "rich>=13.0",
+    "typer>=0.9",
+]
+
+[project.optional-dependencies]
+coco = ["pycocotools>=2.0"]
+datasets = ["datasets>=2.14"]
+dev = [
+    "pytest>=7.0",
+    "httpx>=0.24",
+]
+all = [
+    "curate-vision[coco,datasets,dev]",
+]
+
+[project.scripts]
+curate-vision = "curate_vision.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/curate_vision"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
