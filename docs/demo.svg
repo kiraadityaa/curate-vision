@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="562" height="534" viewBox="0 0 562 534" role="img" aria-label="curate-vision demo run">
+<title>curate-vision demo run</title><rect width="100%" height="100%" rx="10" fill="#0d1117"/><path d="M10 0 H552.4 V30.0 H10 Z" fill="#161b22"/><rect x="0.5" y="0.5" width="561" height="532" rx="10" fill="none" stroke="#30363d"/><circle cx="6.0" cy="15" r="5.5" fill="#ff7b72"/><circle cx="21.0" cy="15" r="5.5" fill="#d29922"/><circle cx="36.0" cy="15" r="5.5" fill="#7ee787"/>
+<text x="50.0" y="19" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#8b949e">curate-vision — examples/data</text>
+<text x="16.0" y="46.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#8b949e">$ </text>
+<text x="31.6" y="46.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#e6edf3">curate-vision run examples/data --min-width 128 --min-height 128 \</text>
+<text x="16.0" y="65.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#c9d1d9">  --blur-threshold 10 --export-manifest --export-coco --export-yolo</text>
+<text x="16.0" y="85.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#c9d1d9"> </text>
+<text x="16.0" y="104.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#e6edf3" font-weight="700">Stage 1/3 Intake</text>
+<text x="16.0" y="124.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#c9d1d9">  discovered 5 image(s)</text>
+<text x="16.0" y="143.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#e6edf3" font-weight="700">Stage 2/3 Filters</text>
+<text x="16.0" y="163.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#c9d1d9">  kept 3 after filters</text>
+<text x="16.0" y="182.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#e6edf3" font-weight="700">Stage 3/3 Perceptual dedup</text>
+<text x="16.0" y="202.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#7ee787">manifest</text>
+<text x="78.4" y="202.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#c9d1d9"> -&gt; out/manifest.jsonl</text>
+<text x="16.0" y="221.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#7ee787">coco</text>
+<text x="47.2" y="221.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#c9d1d9"> -&gt; out/coco.json</text>
+<text x="16.0" y="241.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#7ee787">yolo labels</text>
+<text x="101.8" y="241.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#c9d1d9"> -&gt; out/labels</text>
+<text x="16.0" y="260.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#c9d1d9"> </text>
+<text x="16.0" y="280.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#e6edf3" font-weight="700">   Curation summary   </text>
+<text x="16.0" y="299.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#8b949e">┏━━━━━━━━━━━━┳━━━━━━━┓</text>
+<text x="16.0" y="319.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#8b949e">┃ </text>
+<text x="31.6" y="319.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#56d4dd">Metric</text>
+<text x="78.4" y="319.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#8b949e">     ┃ </text>
+<text x="133.0" y="319.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#e6edf3">Value</text>
+<text x="172.0" y="319.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#8b949e"> ┃</text>
+<text x="16.0" y="338.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#8b949e">┡━━━━━━━━━━━━╇━━━━━━━┩</text>
+<text x="16.0" y="358.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#8b949e">│ </text>
+<text x="31.6" y="358.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#56d4dd">total</text>
+<text x="70.6" y="358.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#8b949e">      │ </text>
+<text x="133.0" y="358.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#d2a8ff">5</text>
+<text x="140.8" y="358.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#8b949e">     │</text>
+<text x="16.0" y="377.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#8b949e">│ </text>
+<text x="31.6" y="377.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#56d4dd">kept</text>
+<text x="62.8" y="377.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#8b949e">       │ </text>
+<text x="133.0" y="377.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#d2a8ff">1</text>
+<text x="140.8" y="377.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#8b949e">     │</text>
+<text x="16.0" y="397.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#8b949e">│ </text>
+<text x="31.6" y="397.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#56d4dd">dropped</text>
+<text x="86.2" y="397.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#8b949e">    │ </text>
+<text x="133.0" y="397.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#d2a8ff">4</text>
+<text x="140.8" y="397.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#8b949e">     │</text>
+<text x="16.0" y="416.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#8b949e">│ </text>
+<text x="31.6" y="416.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#56d4dd">duplicates</text>
+<text x="109.6" y="416.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#8b949e"> │ </text>
+<text x="133.0" y="416.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#d2a8ff">2</text>
+<text x="140.8" y="416.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#8b949e">     │</text>
+<text x="16.0" y="436.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#8b949e">└────────────┴───────┘</text>
+<text x="16.0" y="455.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#c9d1d9"> </text>
+<text x="16.0" y="475.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#e6edf3" font-weight="700">Dropped reasons:</text>
+<text x="16.0" y="494.8" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#c9d1d9">  blurry: 1</text>
+<text x="16.0" y="514.2" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="13.0" fill="#c9d1d9">  too_small: 1</text>
+</svg>

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Demo terminal screenshot (`docs/demo.svg`) rendered from real CLI output.
 - `curate-vision run` CLI for the full pipeline.
 - Intake stage: recursive folder scanning with corrupt-file detection.
 - Filters: minimum resolution, aspect ratio, blur (variance-of-Laplacian).
