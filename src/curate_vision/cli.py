@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Optional
+from typing import Annotated
 
 import typer
 from rich.console import Console
@@ -29,38 +29,42 @@ def _version_callback(value: bool) -> None:
 
 @app.callback()
 def main(
-    version: Optional[bool] = typer.Option(
-        None,
-        "--version",
-        callback=_version_callback,
-        is_eager=True,
-        help="Show version and exit.",
-    ),
+    version: Annotated[
+        bool | None,
+        typer.Option(
+            "--version",
+            callback=_version_callback,
+            is_eager=True,
+            help="Show version and exit.",
+        ),
+    ] = None,
 ) -> None:
     pass
 
 
 @app.command()
 def run(
-    input_dir: Path = typer.Argument(..., help="Directory of images to curate."),
-    out_dir: Path = typer.Option(
-        Path("out"), help="Directory for all outputs."
+    input_dir: Annotated[Path, typer.Argument(help="Directory of images to curate.")],
+    out_dir: Annotated[Path, typer.Option(help="Directory for all outputs.")] = Path(
+        "out"
     ),
-    recursive: bool = typer.Option(True, help="Scan subdirectories."),
-    min_width: int = typer.Option(128, help="Minimum image width (px)."),
-    min_height: int = typer.Option(128, help="Minimum image height (px)."),
-    blur_threshold: float = typer.Option(
-        50.0, help="Variance-of-Laplacian blur threshold."
-    ),
-    dedup: bool = typer.Option(True, help="Enable perceptual dedup."),
-    dedup_tolerance: int = typer.Option(
-        6, help="Max Hamming distance for a duplicate match."
-    ),
-    export_manifest: bool = typer.Option(True, help="Write JSONL manifest."),
-    export_coco: bool = typer.Option(False, help="Write COCO JSON."),
-    export_yolo: bool = typer.Option(False, help="Write YOLO label files."),
-    export_hf: bool = typer.Option(False, help="Write HuggingFace dataset."),
-    checkpoint_every: int = typer.Option(500, help="Checkpoint every N items."),
+    recursive: Annotated[bool, typer.Option(help="Scan subdirectories.")] = True,
+    min_width: Annotated[int, typer.Option(help="Minimum image width (px).")] = 128,
+    min_height: Annotated[int, typer.Option(help="Minimum image height (px).")] = 128,
+    blur_threshold: Annotated[
+        float, typer.Option(help="Variance-of-Laplacian blur threshold.")
+    ] = 50.0,
+    dedup: Annotated[bool, typer.Option(help="Enable perceptual dedup.")] = True,
+    dedup_tolerance: Annotated[
+        int, typer.Option(help="Max Hamming distance for a duplicate match.")
+    ] = 6,
+    export_manifest: Annotated[bool, typer.Option(help="Write JSONL manifest.")] = True,
+    export_coco: Annotated[bool, typer.Option(help="Write COCO JSON.")] = False,
+    export_yolo: Annotated[bool, typer.Option(help="Write YOLO label files.")] = False,
+    export_hf: Annotated[bool, typer.Option(help="Write HuggingFace dataset.")] = False,
+    checkpoint_every: Annotated[
+        int, typer.Option(help="Checkpoint every N items.")
+    ] = 500,
 ) -> None:
     """Curate images from INPUT_DIR through filters and dedup."""
     if not input_dir.is_dir():

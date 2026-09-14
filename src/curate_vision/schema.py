@@ -1,8 +1,7 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, field, asdict
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
-from typing import Optional
 
 
 @dataclass
@@ -19,7 +18,7 @@ class ImageItem:
     dhash: str = ""
     flags: list[str] = field(default_factory=list)
     included: bool = True
-    duplicate_of: Optional[str] = None
+    duplicate_of: str | None = None
 
     def to_dict(self) -> dict:
         d = asdict(self)

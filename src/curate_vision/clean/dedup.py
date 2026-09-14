@@ -21,7 +21,9 @@ def _hamming(a: str, b: str) -> int:
     return imagehash.hex_to_hash(a) - imagehash.hex_to_hash(b)
 
 
-def _find_duplicate(phash: str, kept_buckets: dict[str, str], tolerance: int) -> str | None:
+def _find_duplicate(
+    phash: str, kept_buckets: dict[str, str], tolerance: int
+) -> str | None:
     for kept_hash in kept_buckets:
         if _hamming(phash, kept_hash) <= tolerance:
             return kept_buckets[kept_hash]

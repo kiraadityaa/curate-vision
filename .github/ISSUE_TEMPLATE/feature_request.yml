@@ -1,0 +1,36 @@
+name: Feature request
+description: Suggest an idea or improvement for curate-vision
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a feature. The more context you give, the easier
+        it is for maintainers to evaluate and implement it.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or motivation
+      description: What need are you trying to solve, and why can't you today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: How should the feature behave? Include CLI/API sketches if relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Workarounds, other tools, or other designs you thought about.
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Would you be willing to help implement it?
+      options:
+        - Yes, I can open a PR
+        - I can help test / review
+        - No, just sharing the idea

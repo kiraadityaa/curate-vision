@@ -1,0 +1,56 @@
+name: Bug report
+description: Report a problem with curate-vision
+labels: [bug, triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Please fill in as much
+        detail as you can so we can reproduce and fix it quickly.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Output of `curate-vision --version` (or commit/ref).
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Linux
+        - macOS
+        - Windows
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened? What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Minimal commands or code to trigger the bug.
+      placeholder: |
+        curate-vision run ./images --out-dir out ...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant output / logs
+      description: Paste the full console output or error traceback.
+      render: shell
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Python version, pip freezes (optional but helpful).
+      render: shell

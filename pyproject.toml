@@ -9,8 +9,15 @@ description = "End-to-end vision dataset curation & pipeline toolkit: intake, cl
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "Apache-2.0" }
-authors = [{ name = "kiraadityaa" }]
-keywords = ["computer-vision", "dataset", "curation", "dedup", "pipeline"]
+authors = [{ name = "kiraadityaa", email = "kiraadityaa@users.noreply.github.com" }]
+keywords = [
+    "computer-vision",
+    "dataset",
+    "curation",
+    "dedup",
+    "pipeline",
+    "deep-learning",
+]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -20,8 +27,10 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
     "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
 ]
 dependencies = [
     "imagehash>=4.3.1",
@@ -34,15 +43,21 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-coco = ["pycocotools>=2.0"]
 datasets = ["datasets>=2.14"]
 dev = [
     "pytest>=7.0",
-    "httpx>=0.24",
+    "pytest-cov>=4.0",
+    "ruff>=0.5",
 ]
 all = [
-    "curate-vision[coco,datasets,dev]",
+    "curate-vision[datasets,dev]",
 ]
+
+[project.urls]
+Homepage = "https://github.com/kiraadityaa/curate-vision"
+Repository = "https://github.com/kiraadityaa/curate-vision"
+Issues = "https://github.com/kiraadityaa/curate-vision/issues"
+Changelog = "https://github.com/kiraadityaa/curate-vision/blob/main/CHANGELOG.md"
 
 [project.scripts]
 curate-vision = "curate_vision.cli:app"
@@ -53,3 +68,25 @@ packages = ["src/curate_vision"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
+markers = ["slow: marks tests as slow (deselect with '-m \"not slow\"')"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "C4"]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["curate_vision"]
+
+[tool.coverage.run]
+source = ["curate_vision"]
+omit = ["src/curate_vision/cli.py"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+skip_covered = true

@@ -14,7 +14,10 @@ def image_dir(tmp_path: Path) -> Path:
     out.mkdir()
     rng = np.random.default_rng(42)
 
-    sharp = (rng.integers(0, 256, (256, 256, 3), dtype=np.uint8) * np.array([1, 2, 3], dtype=np.uint8)).astype(np.uint8)
+    sharp = (
+        rng.integers(0, 256, (256, 256, 3), dtype=np.uint8)
+        * np.array([1, 2, 3], dtype=np.uint8)
+    ).astype(np.uint8)
     Image.fromarray(sharp).save(out / "sharp_1.png")
 
     near_dup = sharp.copy()

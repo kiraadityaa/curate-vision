@@ -4,12 +4,11 @@ import json
 from pathlib import Path
 
 from rich.console import Console
-from rich.progress import track
 
+from curate_vision.clean.dedup import deduplicate
+from curate_vision.clean.filters import apply_filters
 from curate_vision.config import PipelineConfig
 from curate_vision.io.loaders import load_images
-from curate_vision.clean.filters import apply_filters
-from curate_vision.clean.dedup import deduplicate
 from curate_vision.schema import ImageItem
 
 CHECKPOINT_FILE = "curate_vision_checkpoint.json"

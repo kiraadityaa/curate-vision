@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from curate_vision.clean.dedup import deduplicate
 from curate_vision.config import PipelineConfig
 from curate_vision.io.loaders import load_images
-from curate_vision.clean.dedup import deduplicate
 
 
 def test_dedup_marks_near_duplicates(sharp_duplicate_dir: Path):

@@ -4,7 +4,6 @@ from pathlib import Path
 
 from PIL import Image
 
-from curate_vision.config import PipelineConfig
 from curate_vision.schema import ImageItem
 
 
@@ -45,7 +44,7 @@ def _coco_format(items: list[ImageItem]) -> dict:
 
 def _yolo_txt(item: ImageItem) -> str:
     """Whitespace-normalised YOLO-style line (class 0, full-image box)."""
-    return f"0 0.5 0.5 1.0 1.0\n"
+    return "0 0.5 0.5 1.0 1.0\n"
 
 
 def export_json_manifest(items: list[ImageItem], out_path: Path) -> Path:
@@ -95,7 +94,8 @@ def export_hf_dataset(
     Requires the optional ``datasets`` extra.
     """
     try:
-        from datasets import Dataset, Image as HFImage, Features, Value
+        from datasets import Dataset, Features, Value
+        from datasets import Image as HFImage
     except ImportError as exc:  # pragma: no cover
         raise RuntimeError(
             "HuggingFace export requires the optional dependency.\n"
